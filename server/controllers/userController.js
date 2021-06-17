@@ -67,9 +67,32 @@ router.post("/login", async(req, res) => {
         }
     } catch (error) {
         res.status(500).json({
-            message: "Failed to log user in"
+            message: "Failed to log in user"
         })
     }
 });
+
+/*
+============================
+    Delete a user
+============================
+*/
+
+// router.delete('/delete/:id', async(req, res) => {
+//     const ownerId = req.user.id;
+
+//     try {
+//         const query = {
+//             where: {
+//                 id: ownerId
+//             }
+//         };
+
+//         await JournalModel.destroy(query);
+//         res.status(200).json({ message: 'User removed' });
+//     } catch (err) {
+//         res.status(500).json({ error: err });
+//     }
+// });
 
 module.exports = router;
